@@ -52,7 +52,7 @@ ax.set_title('Perbandingan Jumlah Peminjaman Berdasarkan Hari Kerja dan Hari Lib
 ax.set_xlabel('Working Day (0 = Hari Libur, 1 = Hari Kerja)')
 ax.set_ylabel('Total Rentals (cnt)')
 # Menampilkan plot
-plt.show(fig)
+plt.pyplot(fig)
 
 st.title("Conclusion of Question 1 and Question 2")
 st.write("1. Pengaruh Suhu terhadap Jumlah Total Peminjaman Sepeda:")
