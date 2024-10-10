@@ -34,13 +34,17 @@ st.write(df.head())  # Cek apakah data sudah terbaca dengan benar
 
 # Visualisasi 1: Pengaruh suhu terhadap jumlah peminjaman sepeda
 st.title("**Visualization of Question 1:** How does temperature affect the total number of bikes borrowed?")
-# Membuat figure dan axes secara eksplisit
+# Membagi suhu (temp) menjadi kategori interval
+bins = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+labels = ['0.0-0.2', '0.2-0.4', '0.4-0.6', '0.6-0.8', '0.8-1.0']
+# Menambahkan kolom 'temp_interval' dengan kategori interval
+df['temp_interval'] = pd.cut(df['temp'], bins=bins, labels=labels, right=False)
+# Membuat figure dan countplot berdasarkan interval suhu
 fig, ax = plt.subplots(figsize=(8, 5))
-# Membuat line plot untuk menggambarkan hubungan antara suhu dan peminjaman sepeda
-sns.lineplot(x='temp', y='cnt', data=df, color='purple', ax=ax)
+sns.countplot(x='temp_interval', data=df, palette='Set1', ax=ax)
 # Menambahkan judul dan label sumbu
-ax.set_title('Pengaruh Suhu terhadap Jumlah Peminjaman Sepeda')
-ax.set_xlabel('Temperature')
+ax.set_title('Jumlah Peminjaman Sepeda Berdasarkan Interval Suhu')
+ax.set_xlabel('Interval Suhu')
 ax.set_ylabel('Total Rentals (cnt)')
 # Menampilkan plot di Streamlit
 st.pyplot(fig)
