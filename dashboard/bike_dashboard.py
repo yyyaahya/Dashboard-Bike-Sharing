@@ -44,7 +44,7 @@ st.pyplot()  # Menampilkan grafik di Streamlit
 # Visualisasi 2: Perbedaan jumlah peminjaman sepeda berdasarkan hari kerja dan hari libur
 st.title("**Visualization of Question 2:** Is there a difference in the number of bikes borrowed based on weekdays and holidays?")
 plt.figure(figsize=(8, 5))
-sns.boxplot(x='workingday', y='cnt', data=df, palette='Set2')
+sns.countplot(x='workingday', y='cnt', data=df, palette='Set2')
 plt.title('Perbandingan Jumlah Peminjaman Berdasarkan Hari Kerja dan Hari Libur')
 plt.xlabel('Working Day (0 = Hari Libur, 1 = Hari Kerja)')
 plt.ylabel('Total Rentals (cnt)')
