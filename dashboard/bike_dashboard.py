@@ -34,16 +34,29 @@ st.write(df.head())  # Cek apakah data sudah terbaca dengan benar
 
 # Visualisasi 1: Pengaruh suhu terhadap jumlah peminjaman sepeda
 st.title("**Visualization of Question 1:** How does temperature affect the total number of bikes borrowed?")
-# Membuat figure dan axes secara eksplisit
-fig, ax = plt.subplots(figsize=(8, 5))
-# Membuat line plot untuk menggambarkan hubungan antara suhu dan peminjaman sepeda
-sns.lineplot(x='temp', y='cnt', data=df, color='purple', ax=ax)
+# Membagi suhu (temp) menjadi kategori interval
+bins = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+labels = ['0.0-0.2', '0.2-0.4', '0.4-0.6', '0.6-0.8', '0.8-1.0']
+# Menambahkan kolom 'temp_interval' dengan kategori interval
+df['temp_interval'] = pd.cut(df['temp'], bins=bins, labels=labels, right=False)
+# Menambahkan kategori baru 'Unknown' jika ada nilai missing
+if df['temp_interval'].isnull().any():
+    print("Terdapat nilai missing pada 'temp_interval'. Mengganti dengan kategori lain.")
+    # Menambahkan kategori baru ke dalam kategori 'temp_interval'
+    df['temp_interval'] = df['temp_interval'].cat.add_categories('Unknown')
+    df['temp_interval'].fillna('Unknown', inplace=True)
+# Memeriksa duplikasi pada 'temp_interval'
+if df['temp_interval'].duplicated().any():
+    print("Terdapat duplikasi pada 'temp_interval'. Memperbaiki duplikasi.")
+# Membuat figure dan countplot berdasarkan interval suhu
+plt.figure(figsize=(8, 5))
+sns.countplot(x='temp_interval', data=df, palette='Set1')
 # Menambahkan judul dan label sumbu
-ax.set_title('Pengaruh Suhu terhadap Jumlah Peminjaman Sepeda')
-ax.set_xlabel('Temperature')
-ax.set_ylabel('Total Rentals (cnt)')
-# Menampilkan plot di Streamlit
-st.pyplot(fig)
+plt.title('Jumlah Peminjaman Sepeda Berdasarkan Interval Suhu')
+plt.xlabel('Interval Suhu')
+plt.ylabel('Total Rentals (cnt)')
+# Menampilkan plot di Jupyter Notebook
+plt.show()
 
 # Visualisasi 2: Perbedaan jumlah peminjaman sepeda berdasarkan hari kerja dan hari libur
 st.title("**Visualization of Question 2:** Is there a difference in the number of bikes borrowed based on weekdays and holidays?")
