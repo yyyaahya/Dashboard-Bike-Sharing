@@ -36,8 +36,8 @@ st.write(df.head())  # Cek apakah data sudah terbaca dengan benar
 st.title("**Visualization of Question 1:** How does temperature affect the total number of bikes borrowed?")
 # Membuat figure dan axes secara eksplisit
 fig, ax = plt.subplots(figsize=(8, 5))
-# Membuat scatter plot dengan 'ax' sebagai objek plotting
-sns.scatterplot(x='temp', y='cnt', data=df, color='purple', ax=ax)
+# Membuat regression plot untuk menggambarkan hubungan linier antara suhu dan peminjaman sepeda
+sns.regplot(x='temp', y='cnt', data=df, color='purple', ax=ax)
 # Menambahkan judul dan label sumbu
 ax.set_title('Pengaruh Suhu terhadap Jumlah Peminjaman Sepeda')
 ax.set_xlabel('Temperature')
