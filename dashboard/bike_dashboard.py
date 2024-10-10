@@ -48,6 +48,7 @@ ax.set_xlabel('Interval Suhu')
 ax.set_ylabel('Total Rentals (cnt)')
 # Menampilkan plot di Streamlit
 st.pyplot(fig)
+st.write(" Plot ini menampilkan jumlah entri pada masing-masing kategori interval suhu (misalnya, 0.0-0.2, 0.2-0.4, dll.), menggambarkan distribusi jumlah data dalam masing-masing kategori suhu.")
 
 # Membuat figure dan axes secara eksplisit
 fig, ax = plt.subplots(figsize=(8, 5))
@@ -59,6 +60,7 @@ ax.set_xlabel('Temperature')
 ax.set_ylabel('Total Rentals (cnt)')
 # Menampilkan plot di Streamlit
 st.pyplot(fig)
+st.write("Plot ini menggambarkan hubungan linier antara suhu dan jumlah peminjaman. Pada plot ini, Anda melihat bagaimana perubahan suhu mempengaruhi jumlah peminjaman.")
 
 # Visualisasi 2: Perbedaan jumlah peminjaman sepeda berdasarkan hari kerja dan hari libur
 st.title("**Visualization of Question 2:** Is there a difference in the number of bikes borrowed based on weekdays and holidays?")
