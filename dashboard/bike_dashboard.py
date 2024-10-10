@@ -37,19 +37,8 @@ st.title("**Visualization of Question 1:** How does temperature affect the total
 # Membagi suhu (temp) menjadi kategori interval
 bins = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
 labels = ['0.0-0.2', '0.2-0.4', '0.4-0.6', '0.6-0.8', '0.8-1.0']
-
 # Menambahkan kolom 'temp_interval' dengan kategori interval
 df['temp_interval'] = pd.cut(df['temp'], bins=bins, labels=labels, right=False)
-
-# Menambahkan kategori baru 'Unknown' jika ada nilai missing
-if df['temp_interval'].isnull().any():
-    st.write("Terdapat nilai missing pada 'temp_interval'. Mengganti dengan kategori lain.")
-    # Menambahkan kategori baru ke dalam kategori 'temp_interval'
-    df['temp_interval'] = df['temp_interval'].cat.add_categories('Unknown')
-    df['temp_interval'].fillna('Unknown', inplace=True)
-# Memeriksa duplikasi pada 'temp_interval'
-if df['temp_interval'].duplicated().any():
-    st.write("Terdapat duplikasi pada 'temp_interval'. Memperbaiki duplikasi.")
 # Membuat figure dan countplot berdasarkan interval suhu
 fig, ax = plt.subplots(figsize=(8, 5))
 sns.countplot(x='temp_interval', data=df, palette='Set1', ax=ax)
