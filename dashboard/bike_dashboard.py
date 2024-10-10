@@ -77,7 +77,8 @@ st.pyplot(fig)
 
 st.title("Conclusion of Question 1 and Question 2")
 st.write("1. Pengaruh Suhu terhadap Jumlah Total Peminjaman Sepeda:")
-st.write("- Dari hasil visualisasi scatter plot, terlihat bahwa suhu memiliki hubungan positif dengan jumlah total peminjaman sepeda. Semakin tinggi suhu (temp), semakin banyak sepeda yang dipinjam (cnt).")
-st.write("- Hal ini dapat diinterpretasikan bahwa kenyamanan fisik yang dipengaruhi oleh suhu menjadi faktor penting dalam keputusan meminjam sepeda.")
+st.write("- Visualisasi ini menunjukkan bahwa jumlah peminjaman sepeda bervariasi di setiap interval suhu.")
+st.write("- Visualisasi ini mengungkapkan hubungan linier yang lebih jelas antara suhu dan jumlah peminjaman sepeda.")
 st.write("2. Perbedaan Jumlah Peminjaman Sepeda Berdasarkan Hari Kerja dan Hari Libur:")
-st.write("- Dari visualisasi boxplot, kita melihat bahwa jumlah peminjaman sepeda pada hari kerja (workingday = 1) cenderung lebih tinggi dibandingkan dengan hari libur (workingday = 0). Median peminjaman pada hari kerja lebih tinggi, dengan variasi yang lebih rendah dibandingkan dengan hari libur.");
+st.write("- Hari Kerja: Ada lebih banyak peminjaman sepeda pada hari kerja. Hal ini bisa mengindikasikan bahwa sepeda digunakan sebagai alat transportasi, baik untuk bekerja atau aktivitas lain yang memerlukan perjalanan harian.")
+st.write("- Hari Libur: Pada hari libur, jumlah peminjaman sepeda lebih sedikit, mungkin karena orang lebih memilih untuk tidak bersepeda pada hari tersebut, atau beraktivitas di luar ruangan dengan cara lain.")
