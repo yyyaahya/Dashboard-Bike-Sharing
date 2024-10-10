@@ -34,12 +34,16 @@ st.write(df.head())  # Cek apakah data sudah terbaca dengan benar
 
 # Visualisasi 1: Pengaruh suhu terhadap jumlah peminjaman sepeda
 st.title("**Visualization of Question 1:** How does temperature affect the total number of bikes borrowed?")
-plt.figure(figsize=(8, 5))
-sns.scatterplot(x='temp', y='cnt', data=df, color='purple')
-plt.title('Pengaruh Suhu terhadap Jumlah Peminjaman Sepeda')
-plt.xlabel('Temperature')
-plt.ylabel('Total Rentals (cnt)')
-st.pyplot()  # Menampilkan grafik di Streamlit
+# Membuat figure dan axes secara eksplisit
+fig, ax = plt.subplots(figsize=(8, 5))
+# Membuat scatter plot dengan 'ax' sebagai objek plotting
+sns.scatterplot(x='temp', y='cnt', data=df, color='purple', ax=ax)
+# Menambahkan judul dan label sumbu
+ax.set_title('Pengaruh Suhu terhadap Jumlah Peminjaman Sepeda')
+ax.set_xlabel('Temperature')
+ax.set_ylabel('Total Rentals (cnt)')
+# Menampilkan plot di Streamlit
+st.pyplot(fig)
 
 # Visualisasi 2: Perbedaan jumlah peminjaman sepeda berdasarkan hari kerja dan hari libur
 st.title("**Visualization of Question 2:** Is there a difference in the number of bikes borrowed based on weekdays and holidays?")
