@@ -49,6 +49,17 @@ ax.set_ylabel('Total Rentals (cnt)')
 # Menampilkan plot di Streamlit
 st.pyplot(fig)
 
+# Membuat figure dan axes secara eksplisit
+fig, ax = plt.subplots(figsize=(8, 5))
+# Membuat line plot untuk menggambarkan hubungan antara suhu dan peminjaman sepeda
+sns.lineplot(x='temp', y='cnt', data=df, color='purple', ax=ax)
+# Menambahkan judul dan label sumbu
+ax.set_title('Pengaruh Suhu terhadap Jumlah Peminjaman Sepeda')
+ax.set_xlabel('Temperature')
+ax.set_ylabel('Total Rentals (cnt)')
+# Menampilkan plot di Streamlit
+st.pyplot(fig)
+
 # Visualisasi 2: Perbedaan jumlah peminjaman sepeda berdasarkan hari kerja dan hari libur
 st.title("**Visualization of Question 2:** Is there a difference in the number of bikes borrowed based on weekdays and holidays?")
 # Membuat figure dan axes secara eksplisit
