@@ -66,12 +66,12 @@ st.pyplot(fig)
 # Kesimpulan
 st.markdown('<p class="big-font">📌 Kesimpulan</p>', unsafe_allow_html=True)
 st.markdown("""
-<p class="conclusion-font">
+<p>
 1. Pengaruh Suhu terhadap Peminjaman Sepeda:<br>
-   - Semakin tinggi suhu, jumlah peminjaman meningkat.
-   - Kategori suhu tertentu memiliki lebih banyak peminjaman.
+   - Semakin tinggi suhu, jumlah peminjaman meningkat.<br>
+   - Kategori suhu tertentu memiliki lebih banyak peminjaman.<br>
 2. Perbedaan Peminjaman di Hari Kerja dan Hari Libur:<br>
-   - Peminjaman lebih tinggi pada hari kerja dibanding hari libur.
-   - Indikasi bahwa sepeda digunakan lebih banyak sebagai alat transportasi harian.
+   - Peminjaman lebih tinggi pada hari kerja dibanding hari libur.<br>
+   - Indikasi bahwa sepeda digunakan lebih banyak sebagai alat transportasi harian.<br>
 </p>
 """, unsafe_allow_html=True)
