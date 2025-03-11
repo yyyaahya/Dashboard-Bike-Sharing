@@ -63,12 +63,12 @@ ax.set_ylabel('Total Rentals (cnt)')
 st.pyplot(fig)
 
 # Kesimpulan
-st.markdown('<p class="big-font">📌 Kesimpulan</p>', unsafe_allow_html=True)
+st.markdown('<p class="conclusion-font">📌 Kesimpulan</p>', unsafe_allow_html=True)
 st.markdown("""
-1. **Pengaruh Suhu terhadap Peminjaman Sepeda:**
+<p class="conclusion-font">1. **Pengaruh Suhu terhadap Peminjaman Sepeda:**</p>
    - Semakin tinggi suhu, jumlah peminjaman meningkat.
    - Kategori suhu tertentu memiliki lebih banyak peminjaman.
-2. **Perbedaan Peminjaman di Hari Kerja dan Hari Libur:**
+<p class="conclusion-font">2. **Perbedaan Peminjaman di Hari Kerja dan Hari Libur:**</p>
    - Peminjaman lebih tinggi pada hari kerja dibanding hari libur.
    - Indikasi bahwa sepeda digunakan lebih banyak sebagai alat transportasi harian.
-""")
+""", unsafe_allow_html=True)
